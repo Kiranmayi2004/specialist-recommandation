@@ -1,0 +1,428 @@
+import pandas as pd 
+ 
+# Existing dataset data_existing = [ ] 
+columns = ["Symptoms", "Specialist"] 
+df = pd.DataFrame(data_existing, columns=columns) 
+ 
+# Extended dataset data_extended = [ 
+    # Fever Symptoms 
+("I've been feeling really hot and sweaty lately.", "General Practitioner"), 
+("My body aches all over.", "General Practitioner"), 
+("I've been shivering and feeling cold.", "General Practitioner"), 
+("I've had chills and rigors.", "General Practitioner"), 
+("My head feels like it's pounding.", "General Practitioner"),
+("I've lost my appetite.", "General Practitioner"), 
+("I've been feeling extremely fatigued.", "General Practitioner"), 
+("I have a dry cough.", "General Practitioner"), 
+("I feel nauseous most of the time.", "General Practitioner"), 
+    ("I've been vomiting.", "General Practitioner"), 
+    ("My throat is sore and scratchy.", "General Practitioner"), 
+    ("I've had trouble breathing.", "General Practitioner"), 
+    ("My eyes feel sore and tired.", "General Practitioner"), 
+    ("I've noticed a rash on my skin.", "General Practitioner"), 
+    ("I've had diarrhea.", "General Practitioner"), 
+    ("I've been experiencing muscle pain.", "General Practitioner"), 
+    ("I've had a runny nose.", "General Practitioner"), 
+    ("I've been extremely thirsty.", "General Practitioner"), 
+    ("I've been waking up drenched in sweat.", "General Practitioner"), 
+    ("I've had difficulty concentrating.", "General Practitioner"), 
+    ("I've been feeling dizzy.", "General Practitioner"), 
+    ("My joints have been hurting.", "General Practitioner"), 
+    ("I've had a fever for several days.", "General Practitioner"), 
+    ("I've had trouble sleeping.", "General Practitioner"), 
+    ("My ears feel blocked.", "General Practitioner"), 
+    ("I've had abdominal pain.", "General Practitioner"), 
+    ("I've had strange dreams.", "General Practitioner"), 
+    ("I've had a loss of taste and smell.", "General Practitioner"), 
+    ("I've been feeling really hot and sweaty lately.", "General Practitioner"), 
+    ("My body aches all over.", "General Practitioner"), 
+    ("I've been shivering and feeling cold.", "General Practitioner"), 
+    ("I've had chills and rigors.", "General Practitioner"), 
+    ("My head feels like it's pounding.", "General Practitioner"), 
+    ("I've lost my appetite.", "General Practitioner"), 
+    ("I've been feeling extremely fatigued.", "General Practitioner"), 
+    ("I have a dry cough.", "General Practitioner"), 
+    ("I feel nauseous most of the time.", "General Practitioner"), 
+    ("I've been vomiting.", "General Practitioner"), 
+    ("My throat is sore and scratchy.", "General Practitioner"), 
+    ("I've had trouble breathing.", "General Practitioner"), 
+("My eyes feel sore and tired.", "General Practitioner"), 
+("I've noticed a rash on my skin.", "General Practitioner"), 
+("I've had diarrhea.", "General Practitioner"), 
+("I've been experiencing muscle pain.", "General Practitioner"), 
+("I've had a runny nose.", "General Practitioner"), 
+("I've been extremely thirsty.", "General Practitioner"), 
+("I've been waking up drenched in sweat.", "General Practitioner"), 
+("I've had difficulty concentrating.", "General Practitioner"), 
+("I've been feeling dizzy.", "General Practitioner"), 
+    ("My joints have been hurting.", "General Practitioner"), 
+    ("I've had a fever for several days.", "General Practitioner"), 
+    ("I've had trouble sleeping.", "General Practitioner"), 
+    ("My ears feel blocked.", "General Practitioner"), 
+    ("I've had abdominal pain.", "General Practitioner"), 
+    ("I've had strange dreams.", "General Practitioner"), 
+    ("I've had a loss of taste and smell.", "General Practitioner"), 
+ 
+    # Eye Disease Symptoms 
+    ("I've been noticing my eyes cross at times.", "Ophthalmologist"), 
+    ("The upper part of my eye seems to sag.", "Ophthalmologist"), 
+    ("My eyes look yellow.", "Ophthalmologist"), 
+    ("I've lost some of my side vision.", "Ophthalmologist"), 
+    ("I woke up with sudden loss of vision in one eye.", "Ophthalmologist"), 
+    ("I'm concerned about a possible retinal detachment.", "Ophthalmologist"), 
+    ("My central vision seems to be deteriorating.", "Ophthalmologist"), 
+    ("I've been diagnosed with glaucoma and need treatment.", "Ophthalmologist"), 
+    ("Everything seems cloudy due to cataracts.", "Ophthalmologist"), 
+    ("I'm worried about retinitis pigmentosa running in my family.", "Ophthalmologist"), 
+    ("My eyes feel like they're constantly dry.", "Ophthalmologist"), 
+    ("I see halos around lights, especially at night.", "Ophthalmologist"), 
+    ("My vision seems to fluctuate throughout the day.", "Ophthalmologist"), 
+    ("I'm experiencing eye strain after using screens.", "Ophthalmologist"), 
+    ("There's a persistent itching in my eyes.", "Ophthalmologist"), 
+    ("I've noticed a sudden increase in eye floaters.", "Ophthalmologist"), 
+    ("My eyes are excessively watery.", "Ophthalmologist"), 
+    ("I've been rubbing my eyes a lot, and they're sore.", "Ophthalmologist"), 
+    ("I feel like something is stuck in my eye.", "Ophthalmologist"), 
+    ("I'm experiencing flashes of light in my vision.", "Ophthalmologist"), 
+    ("My eyes feel very tired, even after resting.", "Ophthalmologist"), 
+    ("I've been experiencing eye pain, especially when I move them.", "Ophthalmologist"), 
+("There's a gritty sensation in my eyes.", "Ophthalmologist"), 
+("I'm seeing a curtain-like shadow in my vision.", "Ophthalmologist"), 
+("My eyes are sensitive to sunlight.", "Ophthalmologist"), 
+("I've noticed a change in the color of my iris.", "Ophthalmologist"), 
+("I have a family history of glaucoma.", "Ophthalmologist"),
+("My eyes are red and bloodshot.", "Ophthalmologist"), 
+("I've been having trouble adjusting to darkness.", "Ophthalmologist"), 
+("I'm experiencing tunnel vision.", "Ophthalmologist"), 
+("There's a yellowish discharge coming from my eyes.", "Ophthalmologist"), 
+    ("I've had a recent injury to my eye.", "Ophthalmologist"), 
+    ("I've been having trouble reading small print.", "Ophthalmologist"), 
+    ("I feel like my eyes are bulging.", "Ophthalmologist"), 
+    ("My eyes are frequently tearing up.", "Ophthalmologist"), 
+    ("I've been diagnosed with diabetic retinopathy.", "Ophthalmologist"), 
+    ("I'm experiencing blurred or distorted vision.", "Ophthalmologist"), 
+    ("I have a history of eye surgery.", "Ophthalmologist"), 
+    ("I've noticed a sudden decrease in vision.", "Ophthalmologist"), 
+    ("My eyes are very sensitive to touch.", "Ophthalmologist"), 
+    ("I'm having trouble seeing at night.", "Ophthalmologist"), 
+    ("I've been diagnosed with macular degeneration.", "Ophthalmologist"), 
+    ("I'm seeing spots or cobwebs in my vision.", "Ophthalmologist"), 
+    ("I've been diagnosed with keratoconus.", "Ophthalmologist"), 
+    ("I'm experiencing frequent headaches, especially around my eyes.", "Ophthalmologist"), 
+    ("There's a lot of mucus in my eyes when I wake up.", "Ophthalmologist"), 
+    ("I have a history of eye allergies.", "Ophthalmologist"), 
+    ("My eyes feel strained when looking at bright lights.", "Ophthalmologist"), 
+    ("I've noticed a change in the size of my pupil.", "Ophthalmologist"), 
+    ("I'm having trouble judging distances accurately.", "Ophthalmologist"), 
+    ("My eyes are constantly red and irritated.", "Ophthalmologist"), 
+    ("I feel like my peripheral vision is reduced.", "Ophthalmologist"), 
+    ("I've been diagnosed with uveitis.", "Ophthalmologist"), 
+    ("I've been experiencing eye fatigue after reading.", "Ophthalmologist"), 
+    ("I have a history of corneal abrasions.", "Ophthalmologist"), 
+    ("I feel like my eyelids are drooping.", "Ophthalmologist"), 
+    ("I'm having trouble seeing clearly at all distances.", "Ophthalmologist"), 
+    ("My eyes have a yellowish tint to them.", "Ophthalmologist"), 
+    ("I'm experiencing a burning sensation in my eyes.", "Ophthalmologist"), 
+    ("I've noticed my eyelashes are falling out.", "Ophthalmologist"), 
+    ("I feel like my eyes are sunken in.", "Ophthalmologist"), 
+    ("I have a foreign object sensation in my eye.", "Ophthalmologist"), 
+("I've been diagnosed with an eye infection.", "Ophthalmologist"), 
+("My eyes feel heavy, especially in the morning.", "Ophthalmologist"), 
+("I have a history of eye twitching.", "Ophthalmologist"), 
+("I've been diagnosed with macular edema.", "Ophthalmologist"), 
+("I'm experiencing a burning and tearing sensation.", "Ophthalmologist"), 
+("My eyes are constantly tearing and stinging.", "Ophthalmologist"), 
+("I feel like I have something in my eye, but nothing is there.", "Ophthalmologist"), 
+("I've been diagnosed with optic neuritis.", "Ophthalmologist"), 
+("I'm seeing wavy or distorted lines.", "Ophthalmologist"), 
+    ("My eyes are bulging and feel uncomfortable.", "Ophthalmologist"), 
+    ("I've noticed a sudden increase in eye pressure.", "Ophthalmologist"), 
+    ("I'm experiencing difficulty in adjusting to new glasses.", "Ophthalmologist"), 
+    ("My eyes are constantly watering and it's affecting my vision.", "Ophthalmologist"), 
+    ("I have a history of eye trauma.", "Ophthalmologist"), 
+    ("I'm seeing halos around lights, especially at night.", "Ophthalmologist"), 
+    ("My eyes feel strained, especially after using the computer.", "Ophthalmologist"), 
+    ("I have a family history of macular degeneration.", "Ophthalmologist"), 
+    ("I'm experiencing discomfort when looking at bright objects.", "Ophthalmologist"),     ("My eyes are bloodshot and painful.", "Ophthalmologist"), 
+     
+    # Heart Disease Symptoms 
+    ("I've been experiencing chest pain or discomfort.", "Cardiologist"), 
+    ("I feel pressure or squeezing in my chest.", "Cardiologist"), 
+    ("The pain spreads to my shoulders, arms, neck, jaw, or back.", "Cardiologist"), 
+    ("I've had shortness of breath, especially with activity.", "Cardiologist"), 
+    ("I feel lightheaded, dizzy, or faint.", "Cardiologist"), 
+    ("I've been sweating more than usual, cold sweats.", "Cardiologist"), 
+    ("I've been nauseous or have been vomiting.", "Cardiologist"), 
+    ("I feel extremely fatigued or weak.", "Cardiologist"), 
+    ("I've had a rapid or irregular heartbeat.", "Cardiologist"), 
+    ("I've been experiencing pain, numbness, or tingling in my arms.", "Cardiologist"), 
+    ("I've noticed swelling in my legs, ankles, or feet.", "Cardiologist"), 
+    ("I've had difficulty breathing when lying flat.", "Cardiologist"), 
+    ("I've had a persistent cough, especially when lying down.", "Cardiologist"), 
+    ("I feel palpitations or fluttering in my chest.", "Cardiologist"), 
+    ("I've had high blood pressure.", "Cardiologist"), 
+    ("I've had high cholesterol.", "Cardiologist"), 
+    ("I've been diagnosed with heart murmur.", "Cardiologist"), 
+    ("I've had a history of heart disease in my family.", "Cardiologist"), 
+    ("I've had swelling or pain in my abdomen.", "Cardiologist"), 
+("I've had trouble sleeping, waking up breathless.", "Cardiologist"), 
+("I've had a racing heartbeat even at rest.", "Cardiologist"), 
+("I've been experiencing a feeling of impending doom.", "Cardiologist"), 
+("I've had pain that worsens with deep breaths or coughing.", "Cardiologist"), 
+("I've been feeling unusually tired or weak.", "Cardiologist"),
+("I've had a fainting episode.", "Cardiologist"), 
+("I've noticed a decrease in exercise tolerance.", "Cardiologist"), 
+("I've been experiencing anxiety or stress.", "Cardiologist"), 
+("I've had heartburn or indigestion.", "Cardiologist"), 
+    ("I've had swelling or pain in my legs.", "Cardiologist"), 
+    ("I've had an irregular pulse.", "Cardiologist"), 
+    ("I've been short of breath even at rest.", "Cardiologist"), 
+    ("I've had a history of smoking.", "Cardiologist"), 
+    ("I've had a history of diabetes.", "Cardiologist"), 
+    ("I've had a history of obesity.", "Cardiologist"), 
+    ("I've had a history of poor diet.", "Cardiologist"), 
+    ("I've had a history of sedentary lifestyle.", "Cardiologist"), 
+    ("I've had a history of excessive alcohol consumption.", "Cardiologist"), 
+    ("I've had a history of drug abuse.", "Cardiologist"), 
+    ("I've had a history of stress or anxiety.", "Cardiologist"), 
+    ("I've had a history of sleep apnea.", "Cardiologist"), 
+    ("I've had a history of irregular heart rhythm.", "Cardiologist"), 
+    ("I've been feeling fatigued after mild physical activity.", "Cardiologist"), 
+    ("I've noticed a sudden weight gain or bloating.", "Cardiologist"), 
+    ("I've been experiencing a feeling of fullness in the chest.", "Cardiologist"), 
+    ("I've had difficulty breathing, even when resting.", "Cardiologist"), 
+    ("I've been waking up at night with difficulty breathing.", "Cardiologist"), 
+    ("I've had a persistent cough with white or pink blood-tinged phlegm.", "Cardiologist"), 
+    ("I've been feeling increased swelling in my legs or abdomen.", "Cardiologist"), 
+    ("I've had a loss of appetite.", "Cardiologist"), 
+    ("I've been feeling extremely weak or tired.", "Cardiologist"), 
+    ("I've noticed a decrease in alertness or mental clarity.", "Cardiologist"), 
+    ("I've had sudden severe headache with no known cause.", "Cardiologist"), 
+    ("I've had a history of heart valve disease.", "Cardiologist"), 
+    ("I've had a history of congenital heart disease.", "Cardiologist"), 
+    ("I've had a history of heart attack.", "Cardiologist"), 
+    ("I've had a history of heart failure.", "Cardiologist"), 
+    ("I've had a history of heart surgery.", "Cardiologist"), 
+    ("I've had a history of stroke.", "Cardiologist"), 
+    ("I've had a history of peripheral artery disease.", "Cardiologist"), 
+("I've had a history of blood clots.", "Cardiologist"), 
+("I've had a history of arrhythmias.", "Cardiologist"), 
+("I've had a history of myocarditis.", "Cardiologist"), 
+("I've had a history of pericarditis.", "Cardiologist"), 
+("I've had a history of aortic aneurysm.", "Cardiologist"), 
+("I've had a history of congenital heart defects.", "Cardiologist"), 
+("I've had a history of heart palpitations.", "Cardiologist"), 
+("I've had a history of ventricular fibrillation.", "Cardiologist"), 
+("I've had a history of heart murmur.", "Cardiologist"), 
+    ("I've had a history of fainting.", "Cardiologist"), 
+    ("I've had a history of palpitations.", "Cardiologist"), 
+    ("I've had a history of cardiomyopathy.", "Cardiologist"), 
+    ("I've had a history of bradycardia.", "Cardiologist"), 
+    ("I've had a history of tachycardia.", "Cardiologist"), 
+    ("I've had a history of endocarditis.", "Cardiologist"), 
+    ("I've had a history of heart block.", "Cardiologist"), 
+    ("I've had a history of heart arrhythmias.", "Cardiologist"), 
+    ("I've had a history of palpitations.", "Cardiologist"), 
+    ("I've had a history of chest discomfort.", "Cardiologist"), 
+    ("I've had a history of chest tightness.", "Cardiologist"), 
+    ("I've had a history of angina.", "Cardiologist"), 
+    ("I've had a history of heartburn.", "Cardiologist"), 
+    ("I've had a history of sweating.", "Cardiologist"), 
+    ("I've had a history of nausea.", "Cardiologist"), 
+    ("I've had a history of vomiting.", "Cardiologist"), 
+    ("I've had a history of fatigue.", "Cardiologist"), 
+    ("I've had a history of weakness.", "Cardiologist"), 
+    ("I've had a history of lightheadedness.", "Cardiologist"), 
+    ("I've had a history of fainting.", "Cardiologist"), 
+    ("I've had a history of heart racing.", "Cardiologist"), 
+    ("I've had a history of irregular heartbeat.", "Cardiologist"), 
+    ("I've had a history of heart flutter.", "Cardiologist"), 
+    ("I've had a history of heart murmur.", "Cardiologist"), 
+] 
+ 
+df_extended = pd.DataFrame(data_extended, columns=columns) 
+ 
+df_combined = pd.concat([df, df_extended]).reset_index(drop=True) 
+ 
+excel_filename_extended = "symptoms_dataset_extended.xlsx" df_combined.to_excel(excel_filename_extended, index=False) 
+ 
+print(f"Extended Excel file '{excel_filename_extended}' created successfully with {len(df_combined)} rows.") 
+ 
+import pandas as pd 
+from sklearn.feature_extraction.text import TfidfVectorizer from sklearn.model_selection import train_test_split from sklearn.linear_model import LogisticRegression from sklearn.metrics import accuracy_score, classification_report from sklearn.preprocessing import LabelEncoder from sklearn.model_selection import GridSearchCV 
+ 
+# Load the dataset 
+data = pd.read_excel("symptoms_dataset_extended.xlsx") 
+ 
+# Split the data into X (features) and y (target) 
+X = data['Symptoms'] 
+y = data['Specialist'] 
+ 
+# Convert the target labels into numerical format 
+label_encoder = LabelEncoder() 
+y = label_encoder.fit_transform(y) 
+ 
+# Create TF-IDF Vectorizer 
+vectorizer = TfidfVectorizer(max_features=1000, stop_words='english') 
+ 
+# Fit and transform the vectorizer on the text data 
+X = vectorizer.fit_transform(X) 
+ 
+# Split the data into training and testing sets 
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42) 
+ 
+# Create the classifier 
+classifier = LogisticRegression(max_iter=1000) 
+ 
+# Define the hyperparameters to tune param_grid = { 
+    'C': [0.001, 0.01, 0.1, 1, 10, 100] 
+} 
+ 
+# GridSearchCV for hyperparameter tuning 
+grid_search = GridSearchCV(classifier, param_grid, cv=5, n_jobs=-1) grid_search.fit(X_train, y_train) 
+ 
+# Get the best hyperparameters best_params = grid_search.best_params_ 
+print("Best Hyperparameters:", best_params) 
+ 
+# Train the classifier with best hyperparameters 
+best_classifier = LogisticRegression(**best_params, max_iter=1000) best_classifier.fit(X_train, y_train) 
+ 
+# Predict on the testing data 
+y_pred = best_classifier.predict(X_test) 
+ 
+# Evaluate the model 
+accuracy = accuracy_score(y_test, y_pred) 
+print("Accuracy:", accuracy) 
+ 
+# Generate a classification report print("Classification Report:") 
+print(classification_report(y_test, y_pred, target_names=label_encoder.classes_)) 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+import pandas as pd 
+from sklearn.feature_extraction.text import TfidfVectorizer from sklearn.linear_model import LogisticRegression from sklearn.preprocessing import LabelEncoder import speech_recognition as sr 
+from googletrans import Translator 
+ 
+# Load the dataset (assuming 'symptoms_dataset_extended.xlsx' is your dataset) data = pd.read_excel("symptoms_dataset_extended.xlsx") 
+ 
+# Split the data into X (features) and y (target) 
+X = data['Symptoms'] 
+y = data['Specialist'] 
+ 
+# Convert the target labels into numerical format 
+label_encoder = LabelEncoder() y = label_encoder.fit_transform(y) 
+ 
+# Create TF-IDF Vectorizer 
+vectorizer = TfidfVectorizer(max_features=1000, stop_words='english') 
+ 
+# Fit and transform the vectorizer on the text data 
+X = vectorizer.fit_transform(X) 
+ 
+# Load the trained classifier (replace this with your trained model) classifier = LogisticRegression(max_iter=1000) classifier.fit(X, y) 
+ 
+def recognize_language(recognizer):     with sr.Microphone() as source:         print("Please say your preferred language...")         recognizer.adjust_for_ambient_noise(source) 
+        audio_data = recognizer.listen(source) 
+     try: 
+        print("Recognizing language...") 
+        language = recognizer.recognize_google(audio_data) 
+        print("Detected language:", language)         return language.lower() 
+ 
+    except sr.UnknownValueError: 
+        print("Sorry, I couldn't understand the language.")         return ""     except sr.RequestError as e: 
+        print("Error fetching results; {0}".format(e))         return ""     except Exception as e:         print("Error:", e)         return "" 
+ 
+def speech_to_text(language_code): 
+ 
+    recognizer = sr.Recognizer() 
+ 
+    with sr.Microphone() as source:         print("Please speak about your illness...") 
+ 
+        recognizer.adjust_for_ambient_noise(source)         audio_data = recognizer.listen(source) 
+     try: 
+        print("Recognizing speech...") 
+        text = recognizer.recognize_google(audio_data, language=language_code)         translator = Translator() 
+        translated_text = translator.translate(text, src=language_code, dest='en').text 
+ 
+        print(f"You said: {text}") 
+        print("Translated text (in English):", translated_text)         return translated_text 
+ 
+    except sr.UnknownValueError: 
+        print("Sorry, I couldn't understand what you said.")         return ""     except sr.RequestError as e: 
+        print("Error fetching results; {0}".format(e))         return ""     except Exception as e:         print("Error:", e)         return "" 
+ 
+if _name_ == "_main_": 
+    language = recognize_language(sr.Recognizer()) 
+     
+    supported_languages = { 
+        'afrikaans': 'af', 'albanian': 'sq', 'amharic': 'am', 'arabic': 'ar', 'armenian': 'hy', 'azerbaijani': 'az', 
+        'basque': 'eu', 'belarusian': 'be', 'bengali': 'bn', 'bosnian': 'bs', 'bulgarian': 'bg', 'catalan': 'ca', 
+        'cebuano': 'ceb', 'chichewa': 'ny', 'chinese': 'zh-CN', 'corsican': 'co', 'croatian': 'hr', 'czech': 'cs', 
+        'danish': 'da', 'dutch': 'nl', 'english': 'en', 'esperanto': 'eo', 'estonian': 'et', 'filipino': 'tl', 
+        'finnish': 'fi', 'french': 'fr', 'frisian': 'fy', 'galician': 'gl', 'georgian': 'ka', 'german': 'de', 
+        'greek': 'el', 'gujarati': 'gu', 'haitian creole': 'ht', 'hausa': 'ha', 'hawaiian': 'haw', 'hebrew': 'iw', 
+        'hindi': 'hi', 'hmong': 'hmn', 'hungarian': 'hu', 'icelandic': 'is', 'igbo': 'ig', 'indonesian': 'id', 
+        'irish': 'ga', 'italian': 'it', 'japanese': 'ja', 'javanese': 'jw', 'kannada': 'kn', 'kazakh': 'kk', 
+        'khmer': 'km', 'kinyarwanda': 'rw', 'korean': 'ko', 'kurdish': 'ku', 'kyrgyz': 'ky', 'lao': 'lo', 
+        'latin': 'la', 'latvian': 'lv', 'lithuanian': 'lt', 'luxembourgish': 'lb', 'macedonian': 'mk', 
+        'malagasy': 'mg', 'malay': 'ms', 'malayalam': 'ml', 'maltese': 'mt', 'maori': 'mi', 'marathi': 'mr', 
+        'mongolian': 'mn', 'myanmar': 'my', 'nepali': 'ne', 'norwegian': 'no', 'odia': 'or', 'pashto': 'ps', 
+        'persian': 'fa', 'polish': 'pl', 'portuguese': 'pt', 'punjabi': 'pa', 'romanian': 'ro', 'russian': 'ru', 
+        'samoan': 'sm', 'scots gaelic': 'gd', 'serbian': 'sr', 'sesotho': 'st', 'shona': 'sn', 'sindhi': 'sd', 
+        'sinhala': 'si', 'slovak': 'sk', 'slovenian': 'sl', 'somali': 'so', 'spanish': 'es', 'sundanese': 'su', 
+        'swahili': 'sw', 'swedish': 'sv', 'tajik': 'tg', 'tamil': 'ta', 'telugu': 'te', 'thai': 'th', 'turkish': 'tr', 
+        'turkmen': 'tk', 'ukrainian': 'uk', 'urdu': 'ur', 'uyghur': 'ug', 'uzbek': 'uz', 'vietnamese': 'vi', 
+        'welsh': 'cy', 'xhosa': 'xh', 'yiddish': 'yi', 'yoruba': 'yo', 'zulu': 'zu'     } 
+ 
+    if language in supported_languages:         language_code = supported_languages[language]         translated_text = speech_to_text(language_code) 
+         
+        if translated_text: 
+            # Vectorize the new symptoms 
+            new_symptoms_vectorized = vectorizer.transform([translated_text]) 
+ 
+            # Predict the specialist for the new symptoms 
+            predicted_specialist = 
+label_encoder.inverse_transform(classifier.predict(new_symptoms_vectorized)) 
+ 
+            print("Predicted Specialist for the Given Symptoms:")             print(predicted_specialist[0])     else: 
+        print("Sorry, the selected language is not supported.") 
+ 
+ 
